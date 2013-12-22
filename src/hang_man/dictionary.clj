@@ -6,7 +6,7 @@
 (def defualt-dictionary "DefaultDictionary.txt")
 (def lowest-character (char \A))
 (def highest-character (char \z))
-;;(def dictionary '()) not needed probably, just return list dirctly 
+(def dictionary-words '()) 
 ;; Not working yet
 ;; 
 (defn read-in-dictionary 
