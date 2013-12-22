@@ -24,9 +24,9 @@
 (defn all-words-in-dictionary
 	"Returns all words in the dictionary with a given size"
 	[word-size the-dictionary]
-	(filter (not (partial zero?)) (map #(if (= word-size (count %))
-		%
-		0))))
+	(filter (not (partial zero?)) 
+		(map #(if (= word-size (count %)) % 0)
+			the-dictionary)))
 
 (defn new-dictionary-with-added-word
 	"Creates and returns new dictionary with the added word"
