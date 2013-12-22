@@ -3,10 +3,8 @@
 
 (def max-word-length (int 29))
 (def min-word-length (int 2))
-(def defualt-dictionary "DefaultDictionary.txt")
 (def lowest-character (char \A))
 (def highest-character (char \z))
-(def dictionary-words '()) ;; This is inefficient use a vector instead
 ;; Not working yet
 ;; 
 (defn read-in-dictionary 
@@ -18,13 +16,13 @@
 ;;Return random word with given size from the dictionary
 (defn randWord
     "Returns a random word from the dictionary with the given word length"
-     [word-size] )
+     [word-size the-dictionary] )
 
 (defn all-words-in-dictionary
 	"Returns all words in the dictionary with a given size"
-	[word-size]
+	[word-size the-dictionary]
 	)
 
 (defn new-dictionary-with-added-word
 	"Creates and returns new dictionary with the added word"
-	[word-size])
+	[word-size the-dictionary])
