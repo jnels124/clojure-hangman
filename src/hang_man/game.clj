@@ -1,6 +1,7 @@
-(ns hangman.game)
-;; Creates a dictionary using the dictionary class
-(def the-Dictionary)
+(ns hangman.game
+	(:use [hang-man.dictionary :as dictionary]))
+;; Creates a dictionary using the dictionary class 
+(def the-Dictionary (dictionary/read-in-dictionary "resources/DefaultDictionary.txt"))
 
 ;; Number of guesses user has --> initially set at run time
 (def number-of-guess (int 0))
