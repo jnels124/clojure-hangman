@@ -6,17 +6,14 @@
 (def defualt-dictionary "DefaultDictionary.txt")
 (def lowest-character (char \A))
 (def highest-character (char \z))
-(def dictionary-words '()) 
+(def dictionary-words '()) ;; This is inefficient use a vector instead
 ;; Not working yet
 ;; 
 (defn read-in-dictionary 
 	"Reads in dictionary from file and returns data structure with contents"
   [filename]
-  #_(slurp (str "resources/DefaultDictionary.txt"))
-  (into dictionary-words (line-seq (io/reader "resources/DefaultDictionary.txt")))
-  ; (with-open [rdr (io/reader "resources/DefaultDictionary.txt")]
-  ;   (doseq [line (line-seq rdr)]
-  ;     (swap! dictionary-words (cons dictionary-words line)))))
+  (into []
+    (line-seq (io/reader filename)))) 
 
 ;;Return random word with given size from the dictionary
 (defn randWord
