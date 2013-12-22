@@ -13,9 +13,10 @@
 	"Reads in dictionary from file and returns data structure with contents"
   [filename]
   #_(slurp (str "resources/DefaultDictionary.txt"))
-  (with-open [rdr (io/reader "resources/DefaultDictionary.txt")]
-    (doseq [line (line-seq rdr)]
-      (println line))))
+  (into dictionary-words (line-seq (io/reader "resources/DefaultDictionary.txt")))
+  ; (with-open [rdr (io/reader "resources/DefaultDictionary.txt")]
+  ;   (doseq [line (line-seq rdr)]
+  ;     (swap! dictionary-words (cons dictionary-words line)))))
 
 ;;Return random word with given size from the dictionary
 (defn randWord
