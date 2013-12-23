@@ -13,22 +13,22 @@
   (into []
     (line-seq (io/reader filename)))) 
 
+(defn all-words-in-dictionary
+	"Returns all words in the dictionary with a given size"
+	[word-size the-dictionary]
+	(filter (partial string?) 
+		(map #(if (= word-size (count %)) % 0)
+			the-dictionary)))
+
 ;;Return random word with given size from the dictionary
 (defn randWord
     "Returns a random word from the dictionary with the given word length"
      [word-size the-dictionary] 
-     (let [ candidates (all-words-in-dictionary word-size the-dictonary)]
+     (let [ candidates (all-words-in-dictionary word-size the-dictionary)]
      	(candidates (rand-int (+ (count candidates) 1))))
      )
-
-(defn all-words-in-dictionary
-	"Returns all words in the dictionary with a given size"
-	[word-size the-dictionary]
-	(filter (not (partial zero?)) 
-		(map #(if (= word-size (count %)) % 0)
-			the-dictionary)))
 
 (defn new-dictionary-with-added-word
 	"Creates and returns new dictionary with the added word"
 	[the-word the-dictionary]
-	(cons the-dictionary the-word))
+	(cons the-word the-dictionary )) ;;Need to insert in order
