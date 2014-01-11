@@ -25,15 +25,15 @@
 	"Returns a random word from the dictionary with the given word length"
 	[word-size the-dictionary] 
 	(let [candidates (all-words-in-dictionary word-size the-dictionary)]
-		(candidates (rand-int (count candidates) ))))
+		(candidates (rand-int (count candidates)))))
 
 (defn new-dictionary-with-added-word
 	"Creates and returns new dictionary with the added word"
 	[the-word the-dictionary]
-	(cons the-word the-dictionary )) ;;Need to insert in order
+	(cons the-word the-dictionary)) ;;Need to insert in order
  
  (defn contains-char?
- 	"This is a helper function to determine if a character is contained" 
- 	"in a string.Nil is returned if the character is not contained in the string."
+ 	"This is a helper function to determine if a character is contained 
+ 	in a string. Nil is returned if the character is not contained in the string."
  	[the-word the-char]
  	(some #(= the-char %) the-word))

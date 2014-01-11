@@ -1,3 +1,3 @@
 (ns hang-man.core)
-(defn main 
+(defn -main
 	[& args])
