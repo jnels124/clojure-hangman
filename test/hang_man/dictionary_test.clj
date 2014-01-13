@@ -7,7 +7,7 @@
   	(let [test-dictionary test-words]
   		(is (not-empty test-dictionary))
   		(is (= (class []) (class test-dictionary))) ;; verify value returned is vector
-  		(is (= (count test-dictionary) 22))) 
+  		(is (= (count test-dictionary) 22)))
   	))
 
 (deftest all-words-in-dictionary-test

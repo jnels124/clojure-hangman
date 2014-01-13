@@ -1,5 +1,6 @@
 (ns hang-man.console-ui
-  (:require [hang-man.hangman-ui-protocol :refer :all]))
+  (:require [hang-man.hangman-ui-protocol :refer :all])
+  )
 
 (deftype ConsoleUI []
   hangman-ui
